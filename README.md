@@ -24,3 +24,40 @@ If not, fork away!
 - [Less](http://lesscss.org/): CSS
 - [Grunt](http://gruntjs.com/): Front-end compilation
 
+## Setup
+
+### Database (Postgres)
+
+To get the database setup, you need PostgreSQL 9.4+. Then create a database and user:
+
+```
+sudo su - postgres
+psql
+> CREATE DATABASE fruit_rescue_db;
+> CREATE ROLE fruit_rescue_user WITH LOGIN PASSWORD 'password';
+> GRANT ALL ON DATABASE fruit_rescue_db TO fruit_rescue_user;
+```
+
+Then, populate the schema:
+
+```
+cd db
+make setup
+```
+### Build (Grunt)
+
+You'll want to install NVM (the node version manager) and Node 0.10 or newer. Then:
+
+```
+cd build
+npm install
+```
+
+To use grunt during development:
+
+```
+screen grunt devserver
+screen grunt watch
+```
+
+The first command runs a dev server on localhost:9001 and the second one will watch all your less, jade, and coffee files and recompile them into www as needed.
