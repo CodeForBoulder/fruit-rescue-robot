@@ -67,7 +67,7 @@ CREATE TABLE harvests (
 CREATE TABLE harvests_humans (
   human_id INTEGER NOT NULL REFERENCES humans(id),
   is_host BOOLEAN,
-  harvest_id INTEGER NOT NULL REFERENCES harvest(id)
+  harvest_id INTEGER NOT NULL REFERENCES harvests(id)
 );
 
 CREATE TABLE tree_harvests (
