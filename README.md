@@ -13,3 +13,14 @@ The overall purpose of the app is to:
 # How can I help?
 If you live in Boulder, join us at a Code for Boulder [Project Night](http://www.meetup.com/CodeForBoulder/)!
 If not, fork away!
+
+### Dependencies ###
+
+- [Backbone](https://github.com/jashkenas/backbone): RESTful model interaction
+- [Node.js](https://nodejs.org/): Server interaction
+- [Postgres](http://www.postgresql.org/): Database
+- [Coffee](http://coffeescript.org/): Javascript
+- [Jade](http://jade-lang.com/): HTML
+- [Less](http://lesscss.org/): CSS
+- [Grunt](http://gruntjs.com/): Front-end compilation
+
