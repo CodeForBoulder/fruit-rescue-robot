@@ -1,0 +1,26 @@
+//- index.jade
+extends ./layout.jade
+
+block title
+  title Article Title
+
+block content
+    .container
+        form(method='post', action='')
+            h1 Contact
+            .form-group
+                label Name
+                input.form-control(type='text',name='name', placeholder='Enter Name')
+            .form-group
+                label Street
+                input.form-control(type='text',name='street_name', placeholder='Enter Street')
+                label Number
+                input.form-control(type='text',name='door_number', placeholder='Enter Door Number')
+                label Postal Code
+                input.form-control(type='number',name='postal_code', placeholder='Enter Postal Code')
+                label Country
+                input.form-control(type='number',name='country', placeholder='Enter Country')
+            .form-group
+                label Email
+                input.form-control(type='email', name='email', placeholder='Enter Email')
+            button.btn.btn-default(type='submit') Submit
