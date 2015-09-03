@@ -20,36 +20,40 @@ If not, fork away!
 
 ### Dependencies
 
+- [Postgres](http://www.postgresql.org/) (9.4+): Database
+- [Node.js](https://nodejs.org/) (0.10+): Server interaction
 - [Backbone](https://github.com/jashkenas/backbone): RESTful model interaction
-- [Node.js](https://nodejs.org/): Server interaction
-- [Postgres 9.4+](http://www.postgresql.org/): Database
+- [Grunt](http://gruntjs.com/): Front-end compilation
 - [Coffee](http://coffeescript.org/): Javascript
 - [Jade](http://jade-lang.com/): HTML
 - [Less](http://lesscss.org/): CSS
-- [Grunt](http://gruntjs.com/): Front-end compilation
 
 ### Directory layout
 
-  * build - grunt and npm configuration
-  * docs - additional documentation
-  * src - the core source for the app
-  	* lib - static things like js libraries
-    * jade - compiles to html
-    * less - compiles to css
-    * coffee - compiles to javascript
-  * static - static things like images
-  * www - app code compiled by grunt from /src directory
+  * /build - grunt and npm configuration
+  * /docs - additional documentation
+  * /src - app source code
+    * /jade - compiles to html
+    * /less - compiles to css
+    * /coffee - compiles to javascript
+  * /www - compiled app source code and static files
+    * Source code compiled by grunt
+      * /css - compiled from /src/less
+      * /js - compiled from /src/coffee
+      * /html - compiled from /src/jade
+    * Static files
+      * /lib - 3rd party libraries
+      * /img - images and other graphics
+      * /font - fonts
 
 ### Database (Postgres 9.4+)
 
-Create a database and user:
+Fire up the `postgres` server, start `psql`, and create a new database and user:
 
 ```
-sudo su - postgres
-psql
-> CREATE DATABASE fruit_rescue_db;
-> CREATE ROLE fruit_rescue_user WITH LOGIN PASSWORD 'password';
-> GRANT ALL ON DATABASE fruit_rescue_db TO fruit_rescue_user;
+CREATE DATABASE fruit_rescue_db;
+CREATE ROLE fruit_rescue_user WITH LOGIN PASSWORD 'password';
+GRANT ALL ON DATABASE fruit_rescue_db TO fruit_rescue_user;
 ```
 
 Then, populate the schema:
@@ -71,11 +75,14 @@ npm install
 To use grunt during development:
 
 ```
+npm install -g grunt-cli
 screen grunt devserver
 screen grunt watch
 ```
 
-The first command runs a dev server on localhost:9001 and the second one will watch all your less, jade, and coffee files and recompile them into www as needed. To recompile manually, run:
+Then browse to http://localhost:9001.
+
+The first command runs a dev server on localhost:9001 and the second one will watch all your less, jade, and coffee files and compile them into /www as needed. To compile manually, run:
 
 ```
 grunt jade coffee less

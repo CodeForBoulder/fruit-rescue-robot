@@ -68,7 +68,7 @@ module.exports = (grunt)->
     notify:
       watch:
         options:
-          message: "Coffee, Less & JADE files compiled"
+          message: "Coffee, Less & Jade files compiled"
 
     watch:
       less:
