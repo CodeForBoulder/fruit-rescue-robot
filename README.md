@@ -21,7 +21,7 @@ If not, fork away!
 ### Dependencies
 
 - [Postgres](http://www.postgresql.org/) (9.4+): Database
-- [Node.js](https://nodejs.org/) (0.10+): Server interaction
+- [Node.js](https://nodejs.org/) (0.12+): Server interaction
 - [Backbone](https://github.com/jashkenas/backbone): RESTful model interaction
 - [Grunt](http://gruntjs.com/): Front-end compilation
 - [Coffee](http://coffeescript.org/): Javascript
@@ -65,7 +65,7 @@ make setup
 
 ### Build (Grunt)
 
-You'll want to install NVM (the node version manager) and Node 0.10 or newer. Then:
+You'll want to install NVM (the node version manager) and Node 0.12 or newer. Then:
 
 ```
 cd build
@@ -76,8 +76,8 @@ To use grunt during development:
 
 ```
 npm install -g grunt-cli
-screen grunt devserver
-screen grunt watch
+grunt devserver
+grunt watch
 ```
 
 Then browse to http://localhost:9001.
@@ -86,4 +86,12 @@ The first command runs a dev server on localhost:9001 and the second one will wa
 
 ```
 grunt jade coffee less
+```
+
+### API (Node 0.12+)
+
+```
+cd api
+npm install
+node api.js
 ```
