@@ -30,7 +30,9 @@ If not, fork away!
 
 ### Directory layout
 
+  * /api - application api
   * /build - grunt and npm configuration
+  * /db - database configuration
   * /docs - additional documentation
   * /src - app source code
     * /jade - compiles to html

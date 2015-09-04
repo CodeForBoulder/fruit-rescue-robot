@@ -6,7 +6,6 @@ build/node_modules/
 api/node_modules
 
 # Compiled from source
-www/js
-www/html
-www/css
-www/index.html
+www/js/*
+www/html/*
+www/css/*
