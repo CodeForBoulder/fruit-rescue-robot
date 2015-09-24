@@ -27,6 +27,11 @@ if (Meteor.isClient) {
 						Session.set('counter', Session.get('counter') + 1);
 				}
 		});
+
+		// User accounts
+		Accounts.ui.config({
+				passwordSignupFields: "USERNAME_ONLY"
+		});
 }
 
 if (Meteor.isServer) {
