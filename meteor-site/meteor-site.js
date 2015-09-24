@@ -12,8 +12,10 @@ HumanPropertiesList = new Mongo.Collection('human_properties');
 HarvestsList = new Mongo.Collection('harvests');
 
 if (Meteor.isClient) {
-		// counter starts at 0
-		Session.setDefault('counter', 0);
+		// User accounts
+		Accounts.ui.config({
+				passwordSignupFields: "USERNAME_ONLY"
+		});
 
 		Template.hello.helpers({
 				counter: function () {
@@ -28,10 +30,25 @@ if (Meteor.isClient) {
 				}
 		});
 
-		// User accounts
-		Accounts.ui.config({
-				passwordSignupFields: "USERNAME_ONLY"
+		// Adding fruit
+		Template.add-fruit-form.helpers({
+				counter: function () {
+						return Session.get('counter');
+				}
 		});
+		
+		Template.addfruitform.events({
+				'submit form': function () {
+						event.preventDefault();
+						var fruitVar = event.target.fruit;
+						TreesList.insert({
+								name: fruitVar,
+								owner: Meteor.userID(),
+								username: Meteor.user().username
+						});
+				}
+		});
+		
 }
 
 if (Meteor.isServer) {

@@ -5,13 +5,23 @@
 <body>
   <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
-
   {{> loginButtons}}
+
+  {{> addfruitform}}
+  
   
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="addfruitform">
+   <form>
+        <input type="text" name="fruit">
+        <input type="submit" value="Add Fruit!">
+    </form>
+</template>
+
+<template name="seefruit">
+   <form>
+        <input type="text" name="fruit">
+        <input type="submit" value="Add Fruit!">
+    </form>
 </template>
