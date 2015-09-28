@@ -19,23 +19,35 @@ template(name='addfruitform')
     input(type='submit', value='Add Fruit!')
 
 template(name='register')
-  h2 Register!
-    form
-      .row
-        .col-sm-6
-          h2 First Name
-        .col-sm-6
-          input(type='text', name='first_name' placeholder='name')
-      .row
-        .col-sm-6
-          h2 Last Name
-        .col-sm-6
-          input(type='text', name='last_name')
-      .row
-        .col-sm-6
-          h2 Email
-        .col-sm-6
-          input(type='text', name='first_name')
+  .row
+    .col-lg-1.col-lg-offset-5
+      h2 Register!
+  form
+    .row
+      .col-sm-6
+        h2 First Name
+      .col-sm-6
+        input(type='text', name='first_name' placeholder='Joe')
+    .row
+      .col-sm-6
+        h2 Last Name
+      .col-sm-6
+        input(type='text', name='last_name' placeholder='Spaceman')
+    .row
+      .col-sm-6
+        h2 Email
+      .col-sm-6
+        input(type='text', name='email' placeholder='bubblegum@hotmail.com')
+    .row
+      .col-sm-6
+        h2 Password
+      .col-sm-6
+        input(type='text', name='password' placeholder='12345')
+    .row
+      .col-sm-12
+        input(type="submit" value="Register")
+        
+
   
 template(name='seefruit')
   form

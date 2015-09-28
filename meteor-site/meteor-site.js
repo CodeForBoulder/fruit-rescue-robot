@@ -17,6 +17,8 @@ if (Meteor.isClient) {
 				passwordSignupFields: "USERNAME_ONLY"
 		});
 		
+
+		
 		Template.addfruitform.events({
 				'submit form': function () {
 						event.preventDefault();
@@ -32,13 +34,25 @@ if (Meteor.isClient) {
 		Template.register.events({
 				'submit form': function () {
 						event.preventDefault();
-						var firstname = event.target.first_name;
-						var lastname = event.target.last_name;
-						HumansList.insert({
-								first_name: ,
-								owner: Meteor.userId(),
-								username: Meteor.user().username
+						var firstname = $('[name=first_name]').val();
+						var lastname = $('[name=last_name]').val();
+						var email = $('[name=email]').val();
+						var password = $('[name=password]').val();
+						// Make the account first...
+						Accounts.createUser({
+								username: email, 
+								email: email,
+								password: password
 						});
+						// ...and then the Human object
+						HumansList.insert({
+								first_name: firstname,
+								last_name: lastname,
+								email: email,
+								owner: Meteor.userId(),
+								username: email
+						});
+						Router.go('meteor-site');
 				}
 		});
 		
