@@ -2,15 +2,15 @@ head
   link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
   title meteor-site
 body
-  h1 Fruit Rescue Project
-  h2 Fruit Rescue Project
-  |   {{> loginButtons}}
-  |   {{> addfruitform}}
-template(name='addfruitform')
+  h1 Fruit Rescue Robot
+  +loginButtons
+  +addTreeForm
+  +treeList
+template(name='addTreeForm')
   form
-    input(type='text', name='fruit')
-    input(type='submit', value='Add Fruit!')
-template(name='seefruit')
-  form
-    input(type='text', name='fruit')
-    input(type='submit', value='Add Fruit!')
+    input(type='text', name='tree')
+    input(type='submit', value='Add tree!')
+template(name='treeList')
+  ul
+    each trees
+      li {{name}}
