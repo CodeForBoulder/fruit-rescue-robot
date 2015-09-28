@@ -1,0 +1,15 @@
+head
+  title meteor-site
+body
+  h1 Fruit Rescue Project
+  h2 Fruit Rescue Project
+  |   {{> loginButtons}}
+  |   {{> addfruitform}}
+template(name='addfruitform')
+  form
+    input(type='text', name='fruit')
+    input(type='submit', value='Add Fruit!')
+template(name='seefruit')
+  form
+    input(type='text', name='fruit')
+    input(type='submit', value='Add Fruit!')

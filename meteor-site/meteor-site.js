@@ -16,26 +16,6 @@ if (Meteor.isClient) {
 		Accounts.ui.config({
 				passwordSignupFields: "USERNAME_ONLY"
 		});
-
-		Template.hello.helpers({
-				counter: function () {
-						return Session.get('counter');
-				}
-		});
-
-		Template.hello.events({
-				'click button': function () {
-						// increment the counter when button is clicked
-						Session.set('counter', Session.get('counter') + 1);
-				}
-		});
-
-		// Adding fruit
-		Template.add-fruit-form.helpers({
-				counter: function () {
-						return Session.get('counter');
-				}
-		});
 		
 		Template.addfruitform.events({
 				'submit form': function () {
@@ -43,7 +23,7 @@ if (Meteor.isClient) {
 						var fruitVar = event.target.fruit;
 						TreesList.insert({
 								name: fruitVar,
-								owner: Meteor.userID(),
+								owner: Meteor.userId(),
 								username: Meteor.user().username
 						});
 				}
