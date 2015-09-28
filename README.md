@@ -29,11 +29,11 @@ If not, fork away!
 
 Once the above software is up and running on your console, run the dependencies script in the top directory:
 
-```./dependencies.sh```
+`./dependencies.sh`
 
 This will install all Meteor packages needed to keep the website running. Meteor uses a built-in Mongo DB to keep track of everything, so it's easy to test on your own machine. Just run:
 
-```meteor run```
+`meteor run`
 
 in Terminal, and you're good to go! Further Meteor help can be found at http://docs.meteor.com/ or http://meteortips.com/
 
