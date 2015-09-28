@@ -28,6 +28,19 @@ if (Meteor.isClient) {
 						});
 				}
 		});
+
+		Template.register.events({
+				'submit form': function () {
+						event.preventDefault();
+						var firstname = event.target.first_name;
+						var lastname = event.target.last_name;
+						HumansList.insert({
+								first_name: ,
+								owner: Meteor.userId(),
+								username: Meteor.user().username
+						});
+				}
+		});
 		
 }
 

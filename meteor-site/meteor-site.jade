@@ -1,16 +1,44 @@
 head
   link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
-  title meteor-site
+  title fruit-rescue
 body
-  h1 Fruit Rescue Project
-  h2 Fruit Rescue Project
-  |   {{> loginButtons}}
-  |   {{> addfruitform}}
+  .container
+    .jumbotron
+      .h1 Fruit Rescue Project
+
+    |   {{> register}}
+    |   {{> addfruitform}}
+  
+  script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+  script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )
+
+
 template(name='addfruitform')
   form
     input(type='text', name='fruit')
     input(type='submit', value='Add Fruit!')
+
+template(name='register')
+  h2 Register!
+    form
+      .row
+        .col-sm-6
+          h2 First Name
+        .col-sm-6
+          input(type='text', name='first_name' placeholder='name')
+      .row
+        .col-sm-6
+          h2 Last Name
+        .col-sm-6
+          input(type='text', name='last_name')
+      .row
+        .col-sm-6
+          h2 Email
+        .col-sm-6
+          input(type='text', name='first_name')
+  
 template(name='seefruit')
   form
     input(type='text', name='fruit')
     input(type='submit', value='Add Fruit!')
+
