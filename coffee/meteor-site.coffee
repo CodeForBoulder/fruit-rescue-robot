@@ -1,55 +1,30 @@
-# All of our global variables
-Humans = new (Mongo.Collection)('humans')
-Harvesters = new (Mongo.Collection)('harvesters')
-Admins = new (Mongo.Collection)('admins')
-Coordinators = new (Mongo.Collection)('coordinators')
-Properties = new (Mongo.Collection)('properties')
-Trees = new (Mongo.Collection)('trees')
-HumanProperties = new (Mongo.Collection)('human_properties')
-Harvests = new (Mongo.Collection)('harvests')
+# Collections
+Humans = new Mongo.Collection('humans')
+Trees = new Mongo.Collection('trees')
+Harvests = new Mongo.Collection('harvests')
 
-# All of our routes
+# Routes
 Router.route('/');
 
+# Client
 if Meteor.isClient
-  # User accounts
-  Accounts.ui.config =
-    passwordSignupFields: 'USERNAME_ONLY'
   
-  Template.addTreeForm.events 
-    'submit form': ()->
-      event.preventDefault()
-      Trees.insert
-        name: event.target.tree.value
-        owner: Meteor.userId()
-        username: Meteor.user().username
-  
-  Template.treeList.helpers
-    'trees': ()->
-      Trees.find()
-
   Template.register.events
     'submit form': ->
       event.preventDefault()
-      firstname = $('[name=first_name]').val()
-      lastname = $('[name=last_name]').val()
-      email = $('[name=email]').val()
-      password = $('[name=password]').val()
-      # Make the account first...
+      # User (for authorization)
       Accounts.createUser
-        username: email
-        email: email
-        password: password
-      # ...and then the Human object
-      HumansList.insert
-        first_name: firstname
-        last_name: lastname
-        email: email
-        owner: Meteor.userId()
-        username: email
+        email: event.target.email.value
+        password: event.target.password.value
+      # Human
+      Humans.insert
+        user_id: Meteor.userId()
+        first_name: event.target.first_name.value
+        last_name: event.target.last_name.value
       # Router.go 'meteor-site'
       return
 
+# Server
 if Meteor.isServer
   Meteor.startup ->
     # code to run on server at startup
