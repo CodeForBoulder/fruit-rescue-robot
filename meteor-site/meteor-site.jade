@@ -6,14 +6,15 @@ body
     .jumbotron
       .h1 Fruit Rescue Project
 
-    |   {{> register}}
-    |   {{> addfruitform}}
+    +register
+    +addTreeForm
+    +treeList
   
   script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
   script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )
 
 
-template(name='addfruitform')
+template(name='addTreeForm')
   form
     input(type='text', name='fruit')
     input(type='submit', value='Add Fruit!')
@@ -46,11 +47,10 @@ template(name='register')
     .row
       .col-sm-12
         input(type="submit" value="Register")
-        
+          
+template(name='treeList')
+  ul
+    each trees
+      li {{name}}
 
-  
-template(name='seefruit')
-  form
-    input(type='text', name='fruit')
-    input(type='submit', value='Add Fruit!')
 
