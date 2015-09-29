@@ -21,7 +21,7 @@ if Meteor.isClient
         user_id: Meteor.userId()
         first_name: event.target.first_name.value
         last_name: event.target.last_name.value
-      # Router.go 'meteor-site'
+      # Router.go('meteor-site')
       return
 
 # Server
