@@ -1,46 +1,45 @@
-Fruit Rescue (Robot)
-===================
+## Community Fruit Rescue
 
-A web app for managing the logistics of urban fruit harvesting. 
-It is being built for [Community Fruit Rescue](http://fruitrescue.org) in Boulder, Colorado, 
-by [Code for Boulder](http://www.codeforboulder.org/) and [Falling Fruit](http://fallingfruit.org).
+### Environment
 
-The overall purpose of the app is to:
+Install global node modules to use from the command line:
 
-- Collect homeowner, harvester, and fruit tree registrations.
-- Facilitate communication with homeowners and harvesters.
-- Plan, coordinate, and track harvests and donations.
-- Be generalized for easy adoption by similar organizations [across the globe](http://fallingfruit.org/sharing).
+```
+npm install http-server -g
+npm install watch -g
+```
 
-### How can I help?
-If you live in Boulder, join us at a Code for Boulder [Project Night](http://www.meetup.com/CodeForBoulder/)!
-If not, fork away!
+Install local nodal modules listed in `package.json`:
 
-## Setup
+```
+npm install
+```
 
-### Software Dependencies
+### Development
 
-- [Meteor](https://www.meteor.com/install) - The JavaScript App Platform
-- [Coffee](http://coffeescript.org/): Easy-bake Javascript
-- [Jade](http://jade-lang.com/): Easy-bake HTML
-- [Less](http://lesscss.org/): Easy-bake CSS
 
-### Getting Started
+Build once from `src/index.js` and `src/fruit-rescue.css`:
 
-Once the above software is up and running on your console, run the dependencies script in the top directory:
+```
+npm run build
+```
 
-`./dependencies.sh`
+Or watch them for changes:
 
-This will install all Meteor packages needed to keep the website running. Meteor uses a built-in Mongo DB to keep track of everything, so it's easy to run:
+```
+npm run watch
+```
 
-`meteor run`
+Start the web server on http://localhost:8081:
 
-in Terminal, and you're good to go! Further Meteor help can be found at http://docs.meteor.com/ or http://meteortips.com/
+```
+npm run start
+```
 
-### Directory layout
+### Deploy to Github Pages
 
-  * /api - application api
-  * /jade - compiles to html
-  * /less - compiles to css
-  * /coffee - compiles to javascript
-  * /docs - Schema and Structure info
+```
+$ git checkout gh-pages
+$ git rebase master
+$ git push
+```

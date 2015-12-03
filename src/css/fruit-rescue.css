@@ -1,0 +1,134 @@
+
+@import '../../node_modules/normalize.css/normalize.css';
+@import '../../node_modules/leaflet/dist/leaflet.css';
+@import '../../node_modules/primer-css/css/primer.css';
+@import '../../node_modules/pikaday2/css/pikaday.css';
+
+@import 'split.css';
+@import 'menu.css';
+
+html, body {
+    height: 100%;
+}
+
+#footer {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+/* MODALS */
+.modal {
+    display: none;
+}
+
+.leaflet-popup.modal {
+    position: absolute;
+    top: 25%;
+    margin-left: 33%;
+}
+
+.leaflet-popup.modal h3 {
+    text-align: center;
+}
+
+a.leaflet-popup-close-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 4px 4px 0px 0px;
+    text-align: center;
+    width: 18px;
+    height: 14px;
+    font: 700 16px/14px Tahoma,Verdana,sans-serif;
+    color: #C3C3C3;
+    text-decoration: none;
+    background: transparent none repeat scroll 0px 0px;
+}
+
+.form.form-inline {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.btn i.fa {
+    vertical-align: middle;
+}
+
+.popup {
+    width: 300px;
+}
+
+.popup ul {
+    list-style: none;
+}
+
+/* HARVESTS */
+#header h2 {
+    padding-left: 10px;
+    width: 100px;
+}
+
+#header .btn-group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#search {
+    position: relative;
+}
+
+#search input {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    border-bottom: 0;
+    border-left: 0;
+}
+
+#search::after {
+    content: '\f002';
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #888;
+    position: absolute;
+    right: 12px;
+    top: 5px;
+}
+
+#search input:focus {
+    border-color: #CCC;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.075) inset;
+}
+
+#list table {
+    width: 100%;
+    border: border: 1px solid #CCC;
+    border-left: 0;
+}
+
+#list table tr {
+    border-bottom: 1px solid #CCC;
+}
+
+#list table td {
+    padding: 5px;
+}
+
+#list table td:first-child {
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+#list table td:last-child {
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* RADIAL MENU */
+#addmenu {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+}
