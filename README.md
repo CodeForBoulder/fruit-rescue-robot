@@ -1,4 +1,8 @@
-## Community Fruit Rescue
+# Community Fruit Rescue
+
+## ARCHIVE UPDATE
+
+This project lost traction and will be archived. If you find this and wish to pick it up, please [join us](http://www.codeforboulder.org/) and consider [resubmitting a proposal](http://www.codeforboulder.org/project-proposals).
 
 ### Environment
 
